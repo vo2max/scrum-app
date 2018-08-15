@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+	background: gray;
+	font-family: arial,sans-serif;
+}
+
+h1 {
+	margin: 40px auto;
+}
+
+.row {
+	text-align: center;
+}
