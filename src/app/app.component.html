@@ -1,22 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="row">
   <h1>
     Welcome to SEA Gull Automotive
   </h1>
 </div>
-<ul style="list-style: none; margin: 0 auto; display: none">
-  <li><img src="src/assets/images/concept-car-opel-back.jpg" width="300"/></li>
-  <li><img src="src/assets/images/concept-car-opel-front.jpg" width="300"/></li>
-  <li><img src="src/assets/images/concept-car-opel-side-closed.jpg" width="300"/></li>
-  <li><img src="src/assets/images/concept-car-opel-side-open.jpg" width="300"/></li>
-</ul>
-
 
 <div class="row">
-  <div class="col-sm"><img src="src/assets/images/concept-car-opel-back.jpg" width="300"/></div>
-  <div class="col-sm"><img src="src/assets/images/concept-car-opel-front.jpg" width="300"/></div>
-  <div class="col-sm"><img src="src/assets/images/concept-car-opel-side-closed.jpg" width="300"/></div>
-  <div class="col-sm"><img src="src/assets/images/concept-car-opel-side-open.jpg" width="300"/></div>
+  <div class="col-sm"><img src="../assets/images/concept-car-opel-back.jpg" width="300"/></div>
+  <div class="col-sm"><img src="../assets/images/concept-car-opel-front.jpg" width="300"/></div>
+  <div class="col-sm"><img src="../assets/images/concept-car-opel-side-closed.jpg" width="300"/></div>
+  <div class="col-sm"><img src="../assets/images/concept-car-opel-side-open.jpg" width="300"/></div>
+</div>
+
+<div class="row">
+	<div class="col-sm" *ngFor="let image of images"><img src="{{image.thumbnailUrl}}"/></div>
 </div>
 
 

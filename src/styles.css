@@ -1,18 +1,19 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
-	background: gray;
-	font-family: arial,sans-serif;
+	background: #676773;
+	font-family: arial, sans-serif;
 }
 
 h1 {
 	margin: 40px auto;
-}
-
-.row {
 	text-align: center;
 }
 
 img {
 	margin: 26px auto;
+}
+
+.row, .row > div {
+	text-align: center;
 }
