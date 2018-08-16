@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
     private loadAllImages() {
         this.galleryService.getImages().subscribe(data => {
-            this.images = data;
+            this.images = data['results'];
         });
     }
 }
