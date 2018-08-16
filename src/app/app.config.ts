@@ -1,3 +1,3 @@
 export const appConfig = {
-    apiUrl: 'https://jsonplaceholder.typicode.com'
+    apiUrl: 'http://localhost:50729/api'
 };

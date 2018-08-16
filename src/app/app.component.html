@@ -5,14 +5,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm"><img src="../assets/images/concept-car-opel-back.jpg" width="300"/></div>
-  <div class="col-sm"><img src="../assets/images/concept-car-opel-front.jpg" width="300"/></div>
-  <div class="col-sm"><img src="../assets/images/concept-car-opel-side-closed.jpg" width="300"/></div>
-  <div class="col-sm"><img src="../assets/images/concept-car-opel-side-open.jpg" width="300"/></div>
-</div>
-
-<div class="row">
-	<div class="col-sm" *ngFor="let image of images"><img src="{{image.thumbnailUrl}}"/></div>
+	<div class="col-sm" *ngFor="let image of images"><img src="{{image.source}}" width="300"/></div>
 </div>
 
 
