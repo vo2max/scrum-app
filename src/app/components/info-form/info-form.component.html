@@ -1,0 +1,37 @@
+<router-outlet></router-outlet>
+<div class="container">
+	<div class="row">
+		<div class="col-sm center">
+			<h4>To have a SEA Gull representative contact you regarding current and future products, please submit the following
+				information:</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 offset-sm-3">
+			<form>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputFirstName">First Name</label> <input type="text"
+							class="form-control" id="inputFirstName" placeholder="Enter first name" required>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputLastName">Last Name</label> <input
+							type="text" class="form-control" id="inputLastName"
+							placeholder="Enter last name" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail">Email address</label> <input
+						type="email" class="form-control" id="exampleInputEmail"
+						aria-describedby="emailHelp" placeholder="Enter email" required> <small
+						id="emailHelp" class="form-text text-muted">We'll never
+						share your email with anyone else.</small>
+				</div>
+				<div class="center">
+					<a routerLink="" routerLinkActive="active"><button type="submit" class="btn btn-default">Back</button></a>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

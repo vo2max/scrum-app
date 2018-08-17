@@ -1,9 +1,7 @@
-<div class="row">
-  <h1>
-    Welcome to SEA Gull Automotive
-  </h1>
+<div class="container">
+	<div class="row">
+		<h1>SEA Gull Automotive</h1>
+	</div>
 </div>
 
-<div class="row">
-	<div class="col-sm" *ngFor="let image of images"><img [src]="'data:image/jpg;base64,'+image.source" width="300"/></div>
-</div>
+<router-outlet></router-outlet>
