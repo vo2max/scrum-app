@@ -12,6 +12,6 @@ export class GalleryService {
     constructor(private http: HttpClient) {}
 
     getImages() {
-        return this.http.get(appConfig.apiUrl + '/photos');
+        return this.http.get(appConfig.apiUrl + '/images.json');
     }
 }
