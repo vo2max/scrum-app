@@ -98,7 +98,8 @@ var AppComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appConfig", function() { return appConfig; });
 var appConfig = {
-    apiUrl: 'http://localhost:50729/api'
+    apiUrl: 'http://localhost:50729/api',
+    apiLocalUrl: 'http://192.168.2.235:8080'
 };
 
 
@@ -332,10 +333,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var GalleryService = /** @class */ (function () {
     function GalleryService(http) {
         this.http = http;
+        this.isTest = false;
         this.images = [];
     }
     GalleryService.prototype.getImages = function () {
-        return this.http.get(_app_config__WEBPACK_IMPORTED_MODULE_0__["appConfig"].apiUrl + '/photos');
+        if (this.isTest) {
+            return this.http.get(_app_config__WEBPACK_IMPORTED_MODULE_0__["appConfig"].apiLocalUrl + '/images.json');
+        }
+        else {
+            return this.http.get(_app_config__WEBPACK_IMPORTED_MODULE_0__["appConfig"].apiUrl + '/photos/exterior');
+        }
     };
     GalleryService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({

@@ -7,11 +7,17 @@ import {HttpClient} from '@angular/common/http';
 })
 export class GalleryService {
 
+    isTest = false;
+
     images: any[] = [];
 
     constructor(private http: HttpClient) {}
 
     getImages() {
-        return this.http.get(appConfig.apiUrl + '/photos');
+        if (this.isTest) {
+            return this.http.get(appConfig.apiLocalUrl + '/images.json');
+        } else {
+            return this.http.get(appConfig.apiUrl + '/photos/exterior');
+        }
     }
 }
