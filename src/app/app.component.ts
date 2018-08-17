@@ -1,4 +1,3 @@
-import {GalleryService} from './services/gallery.service';
 import {Component, OnInit} from '@angular/core';
 
 @Component({
@@ -10,18 +9,11 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
 
     title = 'scrum-app';
-    images: any;
 
-    constructor(private galleryService: GalleryService) {
+    constructor() {
     }
 
     ngOnInit() {
-        this.loadAllImages();
     }
 
-    private loadAllImages() {
-        this.galleryService.getImages().subscribe(data => {
-            this.images = data['results'];
-        });
-    }
 }
