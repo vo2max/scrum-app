@@ -3,14 +3,14 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-    selector: 'app-gallery',
-    templateUrl: './gallery.component.html',
-    styleUrls: ['./gallery.component.css']
+    selector: 'app-exterior-gallery',
+    templateUrl: './exterior-gallery.component.html',
+    styleUrls: ['./exterior-gallery.component.css']
 })
-export class GalleryComponent implements OnInit {
+export class ExteriorGalleryComponent implements OnInit {
 
     images: any;
-    type: string = 'interior';
+    type: string = 'exterior';
 
     constructor(private galleryService: GalleryService, private route: ActivatedRoute) {
         //this.route.params.subscribe(params => this.type = params.type);

@@ -123,6 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_info_form_info_form_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/info-form/info-form.component */ "./src/app/components/info-form/info-form.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/gallery/gallery.component */ "./src/app/components/gallery/gallery.component.ts");
+/* harmony import */ var _components_exterior_gallery_exterior_gallery_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/exterior-gallery/exterior-gallery.component */ "./src/app/components/exterior-gallery/exterior-gallery.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -137,9 +138,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var appRoutes = [
     { path: 'info', component: _components_info_form_info_form_component__WEBPACK_IMPORTED_MODULE_5__["InfoFormComponent"] },
-    { path: 'gallery/:type', component: _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_7__["GalleryComponent"] },
+    { path: 'gallery/interior', component: _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_7__["GalleryComponent"] },
+    { path: 'gallery/exterior', component: _components_exterior_gallery_exterior_gallery_component__WEBPACK_IMPORTED_MODULE_8__["ExteriorGalleryComponent"] },
     { path: '', redirectTo: '/gallery/exterior', pathMatch: 'full' },
 ];
 var AppModule = /** @class */ (function () {
@@ -150,19 +153,97 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
                 _components_info_form_info_form_component__WEBPACK_IMPORTED_MODULE_5__["InfoFormComponent"],
-                _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_7__["GalleryComponent"]
+                _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_7__["GalleryComponent"],
+                _components_exterior_gallery_exterior_gallery_component__WEBPACK_IMPORTED_MODULE_8__["ExteriorGalleryComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
-                )
+                _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot(appRoutes)
             ],
             providers: [_services_gallery_service__WEBPACK_IMPORTED_MODULE_4__["GalleryService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/exterior-gallery/exterior-gallery.component.css":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/exterior-gallery/exterior-gallery.component.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/exterior-gallery/exterior-gallery.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/exterior-gallery/exterior-gallery.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<router-outlet></router-outlet>\n\n<div class=\"container\">\n\t<div class=\"row\">\n\t\t<div class=\"col-sm center nav\">\n\t\t\t<a routerLink=\"/gallery/exterior\" routerLinkActive=\"active\">Exterior</a> / \n\t\t\t<a routerLink=\"/gallery/interior\" routerLinkActive=\"active\">Interior</a>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-sm center\" *ngFor=\"let image of images\">\n\t\t\t<img [src]=\"'data:image/jpg;base64,'+image.source\" width=\"300\" />\n\t\t</div>\n\t</div>\n\t<div class=\"row\" style=\"display: none;\">\n\t\t<div class=\"col-sm center\">\n\t\t\t<h5>\n\t\t\t\tFor additional information, <a routerLink=\"/info\"\n\t\t\t\t\trouterLinkActive=\"active\">click here</a>.\n\t\t\t</h5>\n\t\t</div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/exterior-gallery/exterior-gallery.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/exterior-gallery/exterior-gallery.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: ExteriorGalleryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExteriorGalleryComponent", function() { return ExteriorGalleryComponent; });
+/* harmony import */ var _services_gallery_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/gallery.service */ "./src/app/services/gallery.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ExteriorGalleryComponent = /** @class */ (function () {
+    function ExteriorGalleryComponent(galleryService, route) {
+        this.galleryService = galleryService;
+        this.route = route;
+        this.type = 'exterior';
+        //this.route.params.subscribe(params => this.type = params.type);
+    }
+    ExteriorGalleryComponent.prototype.ngOnInit = function () {
+        this.loadAllImages();
+    };
+    ExteriorGalleryComponent.prototype.loadAllImages = function () {
+        var _this = this;
+        this.galleryService.getImages(this.type).subscribe(function (data) {
+            _this.images = data['results'];
+        });
+    };
+    ExteriorGalleryComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-exterior-gallery',
+            template: __webpack_require__(/*! ./exterior-gallery.component.html */ "./src/app/components/exterior-gallery/exterior-gallery.component.html"),
+            styles: [__webpack_require__(/*! ./exterior-gallery.component.css */ "./src/app/components/exterior-gallery/exterior-gallery.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_gallery_service__WEBPACK_IMPORTED_MODULE_0__["GalleryService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+    ], ExteriorGalleryComponent);
+    return ExteriorGalleryComponent;
 }());
 
 
@@ -187,7 +268,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n\n<div class=\"container\">\n\t<div class=\"row\" style=\"display: none;\">\n\t\t<div class=\"col-sm center nav\">\n\t\t\t<a>Exterior</a> / <a>Interior</a>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-sm center\" *ngFor=\"let image of images\">\n\t\t\t<img [src]=\"'data:image/jpg;base64,'+image.source\" width=\"300\" />\n\t\t</div>\n\t</div>\n\t<div class=\"row\" style=\"display: none;\">\n\t\t<div class=\"col-sm center\">\n\t\t\t<h5>\n\t\t\t\tFor additional information, <a routerLink=\"/info\"\n\t\t\t\t\trouterLinkActive=\"active\">click here</a>.\n\t\t\t</h5>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<router-outlet></router-outlet>\n\n<div class=\"container\">\n\t<div class=\"row\">\n\t\t<div class=\"col-sm center nav\">\n\t\t\t<a routerLink=\"/gallery/exterior\" routerLinkActive=\"active\">Exterior</a> / \n\t\t\t<a routerLink=\"/gallery/interior\" routerLinkActive=\"active\">Interior</a>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-sm center\" *ngFor=\"let image of images\">\n\t\t\t<img [src]=\"'data:image/jpg;base64,'+image.source\" width=\"300\" />\n\t\t</div>\n\t</div>\n\t<div class=\"row\" style=\"display: none;\">\n\t\t<div class=\"col-sm center\">\n\t\t\t<h5>\n\t\t\t\tFor additional information, <a routerLink=\"/info\"\n\t\t\t\t\trouterLinkActive=\"active\">click here</a>.\n\t\t\t</h5>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -218,11 +299,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var GalleryComponent = /** @class */ (function () {
     function GalleryComponent(galleryService, route) {
-        var _this = this;
         this.galleryService = galleryService;
         this.route = route;
-        this.type = 'exterior';
-        this.route.params.subscribe(function (params) { return _this.type = params.type; });
+        this.type = 'interior';
+        //this.route.params.subscribe(params => this.type = params.type);
     }
     GalleryComponent.prototype.ngOnInit = function () {
         this.loadAllImages();

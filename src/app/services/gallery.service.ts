@@ -8,7 +8,6 @@ import {HttpClient} from '@angular/common/http';
 export class GalleryService {
 
     isTest = false;
-
     images: any[] = [];
 
     constructor(private http: HttpClient) {}
