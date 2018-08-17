@@ -10,8 +10,8 @@ import {GalleryComponent} from './components/gallery/gallery.component';
 
 const appRoutes: Routes = [
     {path: 'info', component: InfoFormComponent},
-    {path: 'gallery', component: GalleryComponent},
-    {path: '', redirectTo: '/gallery', pathMatch: 'full'},
+    {path: 'gallery/:type', component: GalleryComponent},
+    {path: '', redirectTo: '/gallery/exterior', pathMatch: 'full'},
 ];
 
 @NgModule({

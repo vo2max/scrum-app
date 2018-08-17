@@ -13,11 +13,11 @@ export class GalleryService {
 
     constructor(private http: HttpClient) {}
 
-    getImages() {
-        if (this.isTest) {
+    getImages(type) {
+        if (this.isTest === true) {
             return this.http.get(appConfig.apiLocalUrl + '/images.json');
         } else {
-            return this.http.get(appConfig.apiUrl + '/photos/exterior');
+            return this.http.get(appConfig.apiUrl + '/photos/' + type);
         }
     }
 }

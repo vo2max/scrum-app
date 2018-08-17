@@ -1,5 +1,6 @@
 import {GalleryService} from '../../services/gallery.service';
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'app-gallery',
@@ -9,8 +10,10 @@ import {Component, OnInit} from '@angular/core';
 export class GalleryComponent implements OnInit {
 
     images: any;
+    type: string = 'exterior';
 
-    constructor(private galleryService: GalleryService) {
+    constructor(private galleryService: GalleryService, private route: ActivatedRoute) {
+        this.route.params.subscribe(params => this.type = params.type);
     }
 
     ngOnInit() {
@@ -18,7 +21,7 @@ export class GalleryComponent implements OnInit {
     }
 
     private loadAllImages() {
-        this.galleryService.getImages().subscribe(data => {
+        this.galleryService.getImages(this.type).subscribe(data => {
             this.images = data['results'];
         });
     }

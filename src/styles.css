@@ -27,6 +27,15 @@ img {
 	margin: 26px auto;
 }
 
+.nav {
+	margin-top: 12px;
+}
+
+.nav > a {
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
 .row {
 	min-height: 42px;
 }
